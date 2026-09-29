@@ -1,5 +1,11 @@
-# Cloudflare Pages project config.
-# `pnpm run build` emits the static site to ./out via `output: 'export'`.
+# This project deploys with `wrangler deploy` (Workers Builds), not Pages.
+# `pnpm run build` emits the static site to ./out via `output: 'export'`, and
+# wrangler uploads that directory as static assets — there is no Worker script,
+# so no `main` entry point is needed.
 name = "nextjs"
-pages_build_output_dir = "out"
 compatibility_date = "2026-09-29"
+
+[assets]
+directory = "./out"
+# Serve the exported out/404.html for unmatched paths.
+not_found_handling = "404-page"
