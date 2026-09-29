@@ -1,0 +1,5 @@
+# Not a monorepo — this file is only pnpm's home for settings since pnpm 11
+# (package.json's "pnpm" field is no longer read).
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
